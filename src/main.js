@@ -1,2 +1,3 @@
-var say = require('./util');
+import say from './util';
+
 say();
