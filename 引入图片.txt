@@ -1,0 +1,12 @@
+$ npm i file-loader --save-dev
+npm WARN npm-init@1.0.0 No description
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ file-loader@5.0.2
+added 2 packages from 2 contributors and audited 12199 packages in 23.489s
+
+25 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities

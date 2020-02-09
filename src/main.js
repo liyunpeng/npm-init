@@ -4,6 +4,15 @@
 import getData from './util';
 import Vue from 'vue';
 import './style/common.scss';
+Vue.component('my-component', {
+    template: '<img :src="url" />',
+    data() {
+        return {
+            url: require('./img/logo.jpg')
+        }
+    }
+})
+
 var app = new Vue({
     el: '#app',
     data: {
