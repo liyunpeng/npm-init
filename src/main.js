@@ -1,3 +1,12 @@
-import say from './util';
+// import say from './util';
+//
+// say();
 
-say();
+import Vue from 'vue';
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue!'
+    }
+});
