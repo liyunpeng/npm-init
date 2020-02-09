@@ -1,0 +1,36 @@
+1. main.js中添加：
+
+import Vue from 'vue';
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+});
+
+2. index.html添加：
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+    <script src="/dist/build.js"></script>
+
+</body>
+
+3. webpack.config.js添加：
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        }
+    }
+
+
+4. npm run build 后, 生成文件./dist/build.js可以看到：
+function (e, t, n) {
+    "use strict";
+    n.r(t);
+    var r = n(1);
+    n(3), new r.a({el: "#app", data: {message: "Hello Vue!"}})
+
+5. 浏览器打开index.html， 看到Hello Vue!

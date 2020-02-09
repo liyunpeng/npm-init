@@ -1,0 +1,53 @@
+1. 需要安装的工具
+ES6的语法大多数浏览器依旧不支持,bable可以把ES6转码成ES5语法，这样我们就可以大胆的在项目中使用最新特性了
+
+allen@allen-PC MINGW64 /e/web-front/npm-init (master)
+$ npm i babel-core babel-loader babel-preset-env babel-preset-stage-3 --save-dev
+npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+
+> core-js@2.6.11 postinstall E:\web-front\npm-init\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon:
+> https://opencollective.com/core-js
+> https://www.patreon.com/zloirock
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+npm WARN babel-loader@8.0.6 requires a peer of @babel/core@^7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN npm-init@1.0.0 No description
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ babel-core@6.26.3
++ babel-preset-stage-3@6.24.1
++ babel-loader@8.0.6
++ babel-preset-env@1.7.0
+added 88 packages from 19 contributors and audited 11983 packages in 54.734s
+
+23 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+--------------
+再安装工具：
+$ npm i babel-polyfill --save-dev
+npm WARN babel-loader@8.0.6 requires a peer of @babel/core@^7.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN npm-init@1.0.0 No description
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ babel-polyfill@6.26.0
+added 2 packages from 2 contributors and audited 11989 packages in 13.364s
+
+23 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+
+2. 在项目根目录新建一个.babelrc文件
