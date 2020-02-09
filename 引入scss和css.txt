@@ -1,0 +1,89 @@
+1. 先安装需要的工具
+webpack默认只支持js的模块化，如果需要把其他文件也当成模块引入，就需要相对应的loader解析器
+allen@allen-PC MINGW64 /e/web-front/npm-init (master)
+$ npm i node-sass css-loader vue-style-loader sass-loader --save-dev
+
+> node-sass@4.13.1 install E:\web-front\npm-init\node_modules\node-sass
+> node scripts/install.js
+
+Downloading binary from https://github.com/sass/node-sass/releases/download/v4.13.1/win32-x64-72_binding.node
+Download complete
+Binary saved to E:\web-front\npm-init\node_modules\node-sass\vendor\win32-x64-72\binding.node
+Caching binary to C:\Users\allen\AppData\Roaming\npm-cache\node-sass\4.13.1\win32-x64-72_binding.node
+
+> node-sass@4.13.1 postinstall E:\web-front\npm-init\node_modules\node-sass
+> node scripts/build.js
+
+Binary found at E:\web-front\npm-init\node_modules\node-sass\vendor\win32-x64-72\binding.node
+Testing binary
+Binary is fine
+npm WARN npm-init@1.0.0 No description
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ node-sass@4.13.1
++ sass-loader@8.0.2
++ css-loader@3.4.2
++ vue-style-loader@4.1.2
+added 144 packages from 136 contributors and audited 9519 packages in 97.002s
+
+23 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+2. webpack.config.js中添加：
+module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader'
+                ],
+            }
+        ]
+    }
+  ------------------
+    {
+        test: /\.css$/,
+        use: [
+            'vue-style-loader',
+            'css-loader'
+        ],
+    }
+    这段代码意思是：匹配后缀名为css的文件,然后分别用css-loader，vue-style-loader去解析
+    解析器的执行顺序是从下往上(先css-loader再vue-style-loader)
+
+    注意：因为我们这里用vue开发，所以使用vue-style-loader，其他情况使用style-loader
+
+    css-loader使得我们可以用模块化的写法引入css,vue-style-loader会将引入的css插入到html页面里的style标签里
+
+    要引入scss也是同理的配置写法:
+
+    module: {
+            rules: [
+                {
+                    test: /\.css$/,
+                    use: [
+                        'vue-style-loader',
+                        'css-loader'
+                    ],
+                },
+                {
+                    test: /\.scss$/,
+                    use: [
+                        'vue-style-loader',
+                        'css-loader',
+                        'sass-loader'
+                    ],
+                },
+                {
+                    test: /\.sass$/,
+                    use: [
+                        'vue-style-loader',
+                        'css-loader',
+                        'sass-loader?indentedSyntax'
+                    ],
+                }]
+        }
