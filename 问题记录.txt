@@ -41,3 +41,4 @@ DevTools failed to parse SourceMap: webpack:///node_modules/sockjs-client/dist/s
 解决办法：
 在webpack.config.js加入：
 devtool: '#eval-source-map'
+解决这个错误， 同时在也能看到浏览器F12 source页下看到App.vue代码，利于调试
