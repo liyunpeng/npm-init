@@ -1,7 +1,7 @@
-allen@allen-PC MINGW64 /e/web-front/npm-init (master)
+
+1. npm init 生成 package.json文件
 $ npm init -y
 Wrote to E:\web-front\npm-init\package.json:
-
 {
   "name": "npm-init",
   "version": "1.0.0",
@@ -24,8 +24,7 @@ Wrote to E:\web-front\npm-init\package.json:
 }
 
 
-
-allen@allen-PC MINGW64 /e/web-front/npm-init (master)
+2. 安装vue
 $ npm i vue --save
 npm notice created a lockfile as package-lock.json. You should commit this file.
 npm WARN npm-init@1.0.0 No description
@@ -34,12 +33,10 @@ npm WARN npm-init@1.0.0 No description
 added 1 package from 1 contributor and audited 1 package in 3.018s
 found 0 vulnerabilities
 
-
-allen@allen-PC MINGW64 /e/web-front/npm-init (master)
 $ ls node_modules/vue/
 dist/  LICENSE  package.json  README.md  src/  types/
 
-
+3. 安装 webpack webpack-dev-server --save-dev
 $ npm i webpack webpack-dev-server --save-dev
 npm WARN npm-init@1.0.0 No description
 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\fsevents):
@@ -111,7 +108,7 @@ added 31 packages from 25 contributors and audited 8844 packages in 27.687s
 found 0 vulnerabilities
 
 
-allen@allen-PC MINGW64 /e/web-front/npm-init (master)
+
 $ npm run dev
 
 > npm-init@1.0.0 dev E:\web-front\npm-init
