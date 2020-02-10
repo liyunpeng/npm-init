@@ -1,0 +1,82 @@
+
+1. npm init 生成 package.json文件
+下载一个空目录：
+$ git clone git@github.com/liyunpeng/npm-init.git
+$ cd npm-init
+$ npm init -y
+Wrote to E:\web-front\npm-init\package.json:
+{
+  "name": "npm-init",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liyunpeng/npm-init.git"   // 读取.git/config配置， 生成此配置项
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liyunpeng/npm-init/issues"
+  },
+  "homepage": "https://github.com/liyunpeng/npm-init#readme"  #读取.git/config配置， 生成此配置项
+}
+
+
+2. 安装vue
+$ npm i vue --save
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN npm-init@1.0.0 No description
+
++ vue@2.6.11
+added 1 package from 1 contributor and audited 1 package in 3.018s
+found 0 vulnerabilities
+
+$ ls node_modules/vue/
+dist/  LICENSE  package.json  README.md  src/  types/
+
+3. 安装 webpack webpack-dev-server --save-dev
+$ npm i webpack webpack-dev-server --save-dev
+npm WARN npm-init@1.0.0 No description
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ webpack-dev-server@3.10.3
++ webpack@4.41.5
+added 539 packages from 347 contributors and audited 7783 packages in 214.852s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ ls node_modules/
+'@types'/                        lodash/
+'@webassemblyjs'/                loglevel/
+'@xtuc'/                         lru-cache/
+
+4. 安装webpack-cli
+$ npm i webpack-cli -g
+ C:\Users\allen\AppData\Roaming\npm\webpack-cli -> C:\Users\allen\AppData\Roaming\npm\node_modules\webpack-cli\bin\cli.js
+ npm WARN webpack-cli@3.3.10 requires a peer of webpack@4.x.x but none is installed. You must install peer dependencies yourself.
+
+ + webpack-cli@3.3.10
+ updated 1 package in 27.812s
+
+5. 重新安装webpack-cli
+$  npm i -D webpack-cli
+npm WARN npm-init@1.0.0 No description
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ webpack-cli@3.3.10
+added 31 packages from 25 contributors and audited 8844 packages in 27.687s
+
+17 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities

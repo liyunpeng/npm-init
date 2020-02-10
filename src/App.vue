@@ -18,6 +18,7 @@
             }
         },
         created() {
+            console.log('23333');
             this.fetchData();
         },
         methods: {

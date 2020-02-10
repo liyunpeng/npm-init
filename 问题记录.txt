@@ -1,0 +1,24 @@
+
+1. vue插件安装
+vue-loader was used without the corresponding plugin. Make sure to include VueLoaderPlugin in your webpack config.
+
+问题分析：
+. 参考官方文档 https://vue-loader.vuejs.org/migrating.html#a-plugin-is-now-required
+. Vue-loader在15.*之后的版本都是 vue-loader的使用都是需要伴生 VueLoaderPlugin的,
+
+解决办法：在webpack.config.js中加入
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+module.exports = {
+    devtool: "sourcemap",
+    entry: './js/entry.js', // 入口文件
+    output: {
+        filename: 'bundle.js' // 打包出来的wenjian
+    },
+    plugins: [
+        // make sure to include the plugin for the magic
+        new VueLoaderPlugin()
+    ],
+    module : {
+    ...
+}
+}
