@@ -22,3 +22,22 @@ module.exports = {
     ...
 }
 }
+
+---------------
+2. 解决DevTools failed to parse SourceMap
+http://localhost:8080/
+F12 看终端输出如下消息：
+[HMR] Waiting for update signal from WDS...
+App.vue?./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options:25 23333
+vue.esm.js:9066 Download the Vue Devtools extension for a better development experience:
+https://github.com/vuejs/vue-devtools
+vue.esm.js:9076 You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.
+See more tips at https://vuejs.org/guide/deployment.html
+:8080/favicon.ico:1 Failed to load resource: the server responded with a status of 404 (Not Found)
+client:48 [WDS] Hot Module Replacement enabled.
+client:52 [WDS] Live Reloading enabled.
+DevTools failed to parse SourceMap: webpack:///node_modules/sockjs-client/dist/sockjs.js.map
+解决办法：
+在webpack.config.js加入：
+devtool: '#eval-source-map'
