@@ -1,0 +1,55 @@
+
+非生产模式：
+$ ls dist/ -l
+total 1736
+-rw-r--r-- 1 allen 197121 1759468 二月   10 11:15 build.js
+-rw-r--r-- 1 allen 197121   13492 二月   10 11:15 logo.jpg
+ build.js为1.7M
+
+生产模式：
+$ ls dist/ -l
+total 1180
+-rw-r--r-- 1 allen 197121 199979 二月   10 11:33 build.js
+-rw-r--r-- 1 allen 197121 987995 二月   10 11:33 build.js.map
+-rw-r--r-- 1 allen 197121  13492 二月   10 11:33 logo.jpg
+ build.js为0.2M
+
+-----------------------------------
+增加生产模式需要的动作：
+1. 安装
+$ npm i cross-env --save-dev
+npm WARN npm-init@1.0.0 No description
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.11 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.11: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ cross-env@7.0.0
+added 6 packages from 5 contributors and audited 12251 packages in 18.635s
+
+25 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+2. package.json添加
+webpack4.x下，压缩代码不在webpack.config.js中写plugins: [ new webpack.optimize.UglifyJsPlugin() ],
+而是在package.json中的script下面写：
+
+    "start": "webpack --mode production",
+    "build": "webpack --mode development"
+
+3. webpack.config.js添加：
+if (process.env.NODE_ENV === 'production') {
+    module.exports.devtool = '#source-map';
+    module.exports.plugins = (module.exports.plugins || []).concat([
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"production"'
+            }
+        }),
+
+    ])
+}
+
+npm run build 
+
+
